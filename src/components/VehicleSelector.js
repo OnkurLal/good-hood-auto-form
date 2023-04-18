@@ -1,13 +1,13 @@
 import React from "react";
-import { VehicleList } from "../lib/vehicleList";
+import { vehicleList } from "../lib/vehicleList";
 import Select from "@mui/material/Select";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 
 function VehicleSelector({ formData, handleChange }) {
-  const uniqueYears = [...new Set(VehicleList.map((vehicle) => vehicle.year))];
-  const filteredYear = VehicleList.filter(
+  const uniqueYears = [...new Set(vehicleList.map((vehicle) => vehicle.year))];
+  const filteredYear = vehicleList.filter(
     (vehicle) => vehicle.year === formData.yearSelection
   );
 

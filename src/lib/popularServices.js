@@ -1,4 +1,4 @@
-export const PopularServices = [
+export const popularServices = [
   "Oil Change",
   "Front Brake Pads & Rotors",
   "Pre-Purchase Inspection",

@@ -75,10 +75,19 @@ function MainForm(props) {
     const form = event.currentTarget;
     if (form.checkValidity()) {
       const validPhone = /^\d{3}-\d{3}-\d{4}$/.test(formData.phone);
-      if (validPhone) {
+      const validEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email);
+      const validName = /^[a-zA-Z ]+$/.test(formData.name);
+
+      if (validPhone && validEmail && validName) {
         console.log(formData);
       } else {
-        alert("Please enter a valid phone number (xxx-xxx-xxxx)");
+        if (!validName) {
+          alert("Please enter a valid name (only letters and spaces allowed)");
+        } else if (!validPhone) {
+          alert("Please enter a valid phone number (xxx-xxx-xxxx)");
+        } else if (!validEmail) {
+          alert("Please enter a valid email address");
+        }
       }
     } else {
       form.reportValidity();
