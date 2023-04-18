@@ -1,10 +1,20 @@
 import React from "react";
+import ServiceSelector from "./ServiceSelector";
+import VehicleSelector from "./VehicleSelector";
+import ContactInfo from "./ContactInfo";
 
 function MainForm(props) {
   return (
     <>
       <div>
-        <h1>Main Form</h1>
+        <form>
+          <h3>Step 1</h3>
+          <ServiceSelector />
+          <h3>Step 2</h3>
+          <VehicleSelector />
+          <h3>Step 3</h3>
+          <ContactInfo />
+        </form>
       </div>
     </>
   );

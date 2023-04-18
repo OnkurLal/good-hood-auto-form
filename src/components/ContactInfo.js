@@ -1,10 +1,31 @@
 import React from "react";
+import TextField from "@mui/material/TextField";
 
 function ContactInfo(props) {
   return (
     <>
       <div>
-        <h1>Contact Info</h1>
+        <TextField
+          required
+          id="outlined-required"
+          label="Name"
+          type="text"
+          defaultValue=""
+        />
+        <TextField
+          required
+          id="outlined-required"
+          label="Email"
+          type="email"
+          defaultValue=""
+        />
+        <TextField
+          required
+          id="outlined-required"
+          label="Phone"
+          type="tel"
+          pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+        />
       </div>
     </>
   );
