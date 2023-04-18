@@ -1,4 +1,4 @@
-export const VEHICLE_LIST = [
+export const VehicleList = [
   {
     year: "1990",
     make: "Gmc",
