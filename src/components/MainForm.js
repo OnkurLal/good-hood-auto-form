@@ -8,7 +8,6 @@ import ButtonGroup from "@mui/material/ButtonGroup";
 
 function MainForm(props) {
   const [formData, setFormData] = useState({
-    // initialize form data here
     serviceSelection: [],
     yearSelection: "",
     vehicleSelection: "",
@@ -75,7 +74,6 @@ function MainForm(props) {
     event.preventDefault();
     const form = event.currentTarget;
     if (form.checkValidity()) {
-      // add phone number pattern validation
       const validPhone = /^\d{3}-\d{3}-\d{4}$/.test(formData.phone);
       if (validPhone) {
         console.log(formData);

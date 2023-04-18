@@ -6,7 +6,6 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 
 function VehicleSelector({ formData, handleChange }) {
-  // Get all the unique years from the VehicleList array
   const uniqueYears = [...new Set(VehicleList.map((vehicle) => vehicle.year))];
 
   const filteredYear = VehicleList.filter(
@@ -31,7 +30,6 @@ function VehicleSelector({ formData, handleChange }) {
               label="Year"
               onChange={handleChange}
             >
-              {/* Render only the unique years */}
               {uniqueYears.map((year) => (
                 <MenuItem key={year} value={year}>
                   {year}
