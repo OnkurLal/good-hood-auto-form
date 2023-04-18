@@ -18,7 +18,7 @@ function ServiceSelector({ formData, handleChange }) {
 
   return (
     <div>
-      <h3>Step 1</h3>
+      <h3>Service Selection</h3>
       <FormControl sx={{ m: 1, minWidth: 300, maxWidth: "auto" }}>
         <InputLabel id="serviceSelection-label" shrink>
           Service Selection

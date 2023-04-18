@@ -4,7 +4,7 @@ import TextField from "@mui/material/TextField";
 function ContactInfo({ formData, handleChange }) {
   return (
     <>
-      <h3>Step 3</h3>
+      <h3>Contact Information</h3>
       <div>
         <div>
           <TextField

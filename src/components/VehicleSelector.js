@@ -14,7 +14,7 @@ function VehicleSelector({ formData, handleChange }) {
   return (
     <>
       <div>
-        <h3>Step 2</h3>
+        <h3>Vehicle Selection</h3>
         <FormControl sx={{ m: 1, minWidth: 80 }}>
           <InputLabel id="yearSelection">Year</InputLabel>
           <Select
