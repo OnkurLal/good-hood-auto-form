@@ -36,7 +36,6 @@ function ContactInfo({ formData, handleChange }) {
             label="Phone"
             name="phone"
             type="tel"
-            pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
             required
             value={formData.phone}
             onChange={handleChange}

@@ -1,5 +1,5 @@
 import React from "react";
-import { PopularServices } from "../lib/popularServices";
+import { popularServices } from "../lib/popularServices";
 import Select from "@mui/material/Select";
 import InputLabel from "@mui/material/InputLabel";
 import FormControl from "@mui/material/FormControl";
@@ -35,7 +35,7 @@ function ServiceSelector({ formData, handleChange }) {
               name: "serviceSelection",
             }}
           >
-            {PopularServices.map((service) => (
+            {popularServices.map((service) => (
               <option key={service} value={service}>
                 {service}
               </option>
