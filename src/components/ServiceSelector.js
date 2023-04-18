@@ -4,7 +4,17 @@ import Select from "@mui/material/Select";
 import InputLabel from "@mui/material/InputLabel";
 import FormControl from "@mui/material/FormControl";
 
-function ServiceSelector(props) {
+function ServiceSelector({ formData, handleChange }) {
+  const handleServiceSelectionChange = (event) => {
+    const selectedServices = Array.from(
+      event.target.selectedOptions,
+      (option) => option.value
+    );
+    handleChange({
+      target: { name: "serviceSelection", value: selectedServices },
+    });
+  };
+
   return (
     <>
       <div>
@@ -18,8 +28,11 @@ function ServiceSelector(props) {
             native
             required
             label="Service Selection"
+            value={formData.serviceSelection}
+            onChange={handleServiceSelectionChange}
             inputProps={{
               id: "serviceSelection",
+              name: "serviceSelection",
             }}
           >
             {PopularServices.map((service) => (

@@ -1,7 +1,7 @@
 import React from "react";
 import TextField from "@mui/material/TextField";
 
-function ContactInfo(props) {
+function ContactInfo({ formData, handleChange }) {
   return (
     <>
       <h3>Step 3</h3>
@@ -11,8 +11,10 @@ function ContactInfo(props) {
             required
             id="outlined-required"
             label="Name"
+            name="name"
             type="text"
-            defaultValue=""
+            value={formData.name}
+            onChange={handleChange}
           />
         </div>
         <br></br>
@@ -21,18 +23,23 @@ function ContactInfo(props) {
             required
             id="outlined-required"
             label="Email"
+            name="email"
             type="email"
-            defaultValue=""
+            value={formData.email}
+            onChange={handleChange}
           />
         </div>
         <br></br>
         <div>
           <TextField
-            required
             id="outlined-required"
             label="Phone"
+            name="phone"
             type="tel"
             pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+            required
+            value={formData.phone}
+            onChange={handleChange}
           />
         </div>
       </div>

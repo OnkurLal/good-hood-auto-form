@@ -5,21 +5,13 @@ import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 
-function VehicleSelector(props) {
-  const [year, setYear] = React.useState("");
-  const [vehicleSelection, setVehicleSelection] = React.useState("");
+function VehicleSelector({ formData, handleChange }) {
+  // Get all the unique years from the VehicleList array
+  const uniqueYears = [...new Set(VehicleList.map((vehicle) => vehicle.year))];
 
-  const handleChange = (event) => {
-    if (event.target.name === "yearSelection") {
-      setYear(event.target.value);
-    }
-    if (event.target.name === "vehicleSelection") {
-      setVehicleSelection(event.target.value);
-    }
-    console.log(event);
-  };
-
-  const filteredYear = VehicleList.filter((vehicle) => vehicle.year === year);
+  const filteredYear = VehicleList.filter(
+    (vehicle) => vehicle.year === formData.yearSelection
+  );
 
   return (
     <>
@@ -31,16 +23,18 @@ function VehicleSelector(props) {
               Year
             </InputLabel>
             <Select
+              required
               labelId="yearSelection"
               id="yearSelection"
               name="yearSelection"
-              value={year}
+              value={formData.yearSelection}
               label="Year"
               onChange={handleChange}
             >
-              {VehicleList.map((vehicle, i) => (
-                <MenuItem key={i} value={vehicle.year}>
-                  {vehicle.year}
+              {/* Render only the unique years */}
+              {uniqueYears.map((year) => (
+                <MenuItem key={year} value={year}>
+                  {year}
                 </MenuItem>
               ))}
             </Select>
@@ -54,10 +48,11 @@ function VehicleSelector(props) {
               Vehicle
             </InputLabel>
             <Select
+              required
               labelId="vehicleSelection"
               id="vehicleSelection"
               name="vehicleSelection"
-              value={vehicleSelection}
+              value={formData.vehicleSelection}
               label="Vehicle"
               onChange={handleChange}
             >
